@@ -37,9 +37,10 @@ function Home() {
 
   return (
     <div className="App">
-      <div>
+      <div id="formArea" className="row">
         <form onSubmit={() => onSubmit()}>
-          <div>
+          <div className="inputArea">
+            <h3>LEARN YOUR BMI</h3>
             <label>Fullname</label>
             <input
               id="username"
@@ -51,73 +52,104 @@ function Home() {
               onChange={onChangeUserName}
             />
           </div>
-          <div>
+          <div className="inputArea">
             <label>Weight</label>
             <input
-            type="number"
+              type="number"
               id="weight"
               name="userweight"
               className="weight"
-              placeholder="eg: 70kg"
+              placeholder="ex: 70kg"
               autoFocus
               value={userWeight}
               onChange={onChangeUserWeight}
             />
           </div>
-          <div>
+          <div className="inputArea">
             <label>Height</label>
             <input
-            type="number"
+              type="number"
               id="height"
               name="userheight"
               className="height"
-              placeholder="eg: 170cm"
+              placeholder="ex: 170cm"
               autoFocus
               value={userHeight}
               onChange={onChangeUserHeight}
             />
           </div>
-          <div>
-            <button onClick={onSubmit}>Ölç</button>
+          <div className="inputArea">
+            <button onClick={onSubmit}>Calculate</button>
           </div>
         </form>
       </div>
 
-      <div>
-        <p>{bmi}</p>
-      </div>
-
-      <div>
+      <div className="row">
         {bmi < 18.5 && (
-          <div>
+          <div className="dietlist dietListArea">
             <h3>Diyet Listesi - {DietList.first.id}</h3>
-            <p>{DietList.first.morning}</p>
-            <p>{DietList.first.noon}</p>
-            <p>{DietList.first.evening}</p>
+            <p>
+              <span>Morning:</span> {DietList.first.morning}
+            </p>
+            <p>
+              <span>Afternoon:</span> {DietList.first.noon}
+            </p>
+            <p>
+              <span>Evening:</span> {DietList.first.evening}
+            </p>
           </div>
         )}
         {bmi >= 18.5 && bmi < 25 && (
-          <div>
+          <div className="dietlist dietListArea">
             <h3>Şu andaki beslenmene devam et...</h3>
           </div>
         )}
         {bmi >= 25 && bmi < 30 && (
-          <div>
+          <div className="dietlist dietListArea">
             <h3>Diyet Listesi - {DietList.second.id}</h3>
-            <p>{DietList.second.morning}</p>
-            <p>{DietList.second.noon}</p>
-            <p>{DietList.second.evening}</p>
+            <p>
+              <span>Morning:</span> {DietList.second.morning}
+            </p>
+            <p>
+              <span>Afternoon:</span> {DietList.second.noon}
+            </p>
+            <p>
+              <span>Evening:</span> {DietList.second.evening}
+            </p>
           </div>
         )}
         {bmi >= 30 && (
-          <div>
+          <div className="dietlist dietListArea">
             <h3>Diyet Listesi - {DietList.third.id}</h3>
-            <p>{DietList.third.morning}</p>
-            <p>{DietList.third.noon}</p>
-            <p>{DietList.third.evening}</p>
+            <p>
+              <span>Morning:</span> {DietList.third.morning}
+            </p>
+            <p>
+              <span>Afternoon:</span> {DietList.third.noon}
+            </p>
+            <p>
+              <span>Evening:</span> {DietList.third.evening}
+            </p>
           </div>
         )}
       </div>
+
+      {(bmi >= 18.5 && bmi < 25) && (
+        <div className="row bmi bmi-healthy">
+          <p>
+            <span>Your BMI: </span>
+            {bmi}
+          </p>
+        </div>
+      )}
+      {(bmi < 18.5 || bmi >= 25) && (
+        <div className="row bmi bmi-unhealthy">
+          <p>
+            <span>Your BMI: </span>
+            {bmi}
+          </p>
+        </div>
+      )}
     </div>
   );
 }

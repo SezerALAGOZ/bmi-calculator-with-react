@@ -8,11 +8,12 @@ import "./App.css";
 export default function App() {
   return (
     <>
+
       <Router>
-        <div>
+        <div id="logo">
           <Link to="/">BMI CALCULATOR</Link>
         </div>
-        <div>
+        <div id="main-nav">
           <nav>
             <ul>
               <li>
@@ -27,8 +28,6 @@ export default function App() {
             </ul>
           </nav>
 
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
           <Routes>
             <Route path="/about" element={<About />} />
             <Route path="/users" element={<Users />} />
@@ -36,6 +35,7 @@ export default function App() {
           </Routes>
         </div>
       </Router>
+
     </>
   );
 }
