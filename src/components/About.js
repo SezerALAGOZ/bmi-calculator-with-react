@@ -1,4 +1,5 @@
 import React from "react";
+import BMIRange from '../images/2e1d1f7e4724f8d2cdb0951c2c610cfa.png'
 
 function About() {
   return (
@@ -19,31 +20,7 @@ function About() {
         </p>
       </div>
       <div>
-          <div>
-              <div>10-18.5</div>
-              <div>Thin</div>
-              <div>Unhealthy</div>
-          </div>
-          <div>
-              <div>18.5 - 25</div>
-              <div>Healty</div>
-              <div>Healthy</div>
-          </div>
-          <div>
-              <div>25 - 30</div>
-              <div>Overweight</div>
-              <div>Unhealthy</div>
-          </div>
-          <div>
-              <div>30-40</div>
-              <div>Fat</div>
-              <div>Unhealty</div>
-          </div>
-          <div>
-              <div>40-60</div>
-              <div>Obesity</div>
-              <div>Unhealthy</div>
-          </div>
+        <img src={BMIRange} />
       </div>
     </div>
   );

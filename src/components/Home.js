@@ -37,6 +37,7 @@ function Home() {
 
   return (
     <div className="App">
+        
       <div>
         <form onSubmit={() => onSubmit()}>
           <div>
@@ -78,8 +79,41 @@ function Home() {
           <button onClick={onSubmit}>Ölç</button>
         </form>
       </div>
+
       <div>{bmi}</div>
-      <div></div>
+
+      <div>
+        {bmi < 18.5 && (
+          <div>
+            <h3>Diyet Listesi - {DietList.first.id}</h3>
+            <p>{DietList.first.morning}</p>
+            <p>{DietList.first.noon}</p>
+            <p>{DietList.first.evening}</p>
+          </div>
+        )}
+        {(bmi >= 18.5 && bmi < 25) && (
+          <div>
+            <h3>Şu andaki beslenmene devam et...</h3>
+          </div>
+        )}
+        {(bmi >= 25 && bmi < 30) && (
+          <div>
+            <h3>Diyet Listesi - {DietList.second.id}</h3>
+            <p>{DietList.second.morning}</p>
+            <p>{DietList.second.noon}</p>
+            <p>{DietList.second.evening}</p>
+          </div>
+        )}
+        {bmi >= 30 && (
+          <div>
+            <h3>Diyet Listesi - {DietList.third.id}</h3>
+            <p>{DietList.third.morning}</p>
+            <p>{DietList.third.noon}</p>
+            <p>{DietList.third.evening}</p>
+          </div>
+        )}
+      </div>
+
     </div>
   );
 }
