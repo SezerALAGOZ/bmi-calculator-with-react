@@ -1,4 +1,11 @@
 .App {
-  text-align: center;
+  width: 80%;
+  margin: auto;
 }
 
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+}

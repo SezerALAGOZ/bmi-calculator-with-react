@@ -3,9 +3,9 @@ import DietList from "../dietList.json";
 import { useState } from "react";
 
 function Home() {
-  const [username, setUsername] = useState("");
-  const [userWeight, setUserWeight] = useState(0);
-  const [userHeight, setUserHeight] = useState(0);
+  const [username, setUsername] = useState();
+  const [userWeight, setUserWeight] = useState();
+  const [userHeight, setUserHeight] = useState();
   const [bmi, setBMI] = useState();
   const [form, setForm] = useState([]);
 
@@ -37,50 +37,55 @@ function Home() {
 
   return (
     <div className="App">
-        
       <div>
         <form onSubmit={() => onSubmit()}>
           <div>
+            <label>Fullname</label>
             <input
               id="username"
               name="username"
               className="username"
               placeholder="Your name..."
               autoFocus
-              value={form.username}
+              value={username}
               onChange={onChangeUserName}
             />
           </div>
-          <p>{form.username}</p>
           <div>
+            <label>Weight</label>
             <input
+            type="number"
               id="weight"
               name="userweight"
               className="weight"
-              placeholder="Your weight."
+              placeholder="eg: 70kg"
               autoFocus
-              value={form.userWeight}
+              value={userWeight}
               onChange={onChangeUserWeight}
             />
           </div>
-          <p>{form.userWeight}</p>
           <div>
+            <label>Height</label>
             <input
+            type="number"
               id="height"
               name="userheight"
               className="height"
-              placeholder="Your height..."
+              placeholder="eg: 170cm"
               autoFocus
-              value={form.userHeight}
+              value={userHeight}
               onChange={onChangeUserHeight}
             />
-            <p>{form.userHeight}</p>
           </div>
-          <button onClick={onSubmit}>Ölç</button>
+          <div>
+            <button onClick={onSubmit}>Ölç</button>
+          </div>
         </form>
       </div>
 
-      <div>{bmi}</div>
+      <div>
+        <p>{bmi}</p>
+      </div>
 
       <div>
         {bmi < 18.5 && (
@@ -91,12 +96,12 @@ function Home() {
             <p>{DietList.first.evening}</p>
           </div>
         )}
-        {(bmi >= 18.5 && bmi < 25) && (
+        {bmi >= 18.5 && bmi < 25 && (
           <div>
             <h3>Şu andaki beslenmene devam et...</h3>
           </div>
         )}
-        {(bmi >= 25 && bmi < 30) && (
+        {bmi >= 25 && bmi < 30 && (
           <div>
             <h3>Diyet Listesi - {DietList.second.id}</h3>
             <p>{DietList.second.morning}</p>
@@ -113,7 +118,6 @@ function Home() {
           </div>
         )}
       </div>
-
     </div>
   );
 }
