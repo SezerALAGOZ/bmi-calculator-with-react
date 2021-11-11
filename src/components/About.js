@@ -3,8 +3,9 @@ import BMIRange from '../images/2e1d1f7e4724f8d2cdb0951c2c610cfa.png'
 
 function About() {
   return (
-    <div>
-      <div>
+    <div id="bmi-about-container">
+      <div id="bmi-about-content">
+        <h2>What is BMI?</h2>
         <p>
           Body mass index (BMI) is a person’s weight in kilograms divided by the
           square of height in meters. BMI is an inexpensive and easy screening
@@ -19,7 +20,7 @@ function About() {
           disease outcome as are these more direct measures of body fatness.
         </p>
       </div>
-      <div>
+      <div id="bmi-image">
         <img src={BMIRange} />
       </div>
     </div>

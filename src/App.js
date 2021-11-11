@@ -8,7 +8,6 @@ import "./App.css";
 export default function App() {
   return (
     <>
-
       <Router>
         <div id="logo">
           <Link to="/">BMI CALCULATOR</Link>
@@ -16,15 +15,15 @@ export default function App() {
         <div id="main-nav">
           <nav>
             <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/users">Results</Link>
-              </li>
+              <Link to="/">
+                <li>Home</li>
+              </Link>
+              <Link to="/about">
+                <li>About</li>
+              </Link>
+              <Link to="/users">
+                <li>Results</li>
+              </Link>
             </ul>
           </nav>
 
@@ -35,7 +34,6 @@ export default function App() {
           </Routes>
         </div>
       </Router>
-
     </>
   );
 }

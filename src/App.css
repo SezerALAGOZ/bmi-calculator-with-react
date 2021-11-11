@@ -50,18 +50,16 @@ body {
 ul {
   list-style-type: none;
   display: flex;
-  justify-content: space-around;
-  align-content: space-around;
   background-color: rgb(115, 185, 194);
 }
 ul li {
   border: 1px solid rgb(126, 119, 119);
-  padding: 10px 152px;
+  padding: 10px 154px;
 }
 ul li:hover {
   background-color: rgb(160, 107, 204);;
 }
-ul li a {
+ul a {
   text-decoration: none;
   font-weight: bold;
   color: #fff;
@@ -142,3 +140,42 @@ ul li a {
 .bmi-unhealthy {
   background-color: rgb(206, 37, 37);
 }
+
+#bmi-about-container {
+  text-align: justify;
+  margin-top: 20px;
+  line-height: 1.5em;
+}
+#bmi-about-content h2 {
+  margin-bottom: 20px;
+  text-indent: 20px;
+}
+#bmi-about-content p {
+  margin-top: 20px;
+  text-indent: 20px;
+}
+#bmi-image {
+  padding: 30px;
+}
+#bmi-image img {
+  filter: drop-shadow(0 3px 5px #505352);
+} 
+
+#results {
+  margin-top: 20px;
+  text-align: center;
+}
+.row {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 5px 0;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-shadow: 0 1px 2px 0 inset;
+}
+.row:first-child {
+  font-weight: bold;
+  padding: 10px 0;
+  background-color: rgb(223, 241, 117);
+}
+
