@@ -1,9 +1,8 @@
 import React from 'react'
 
 function Users() {
-    const x = localStorage.getItem('formData');
-    const y = JSON.parse(x);
-    console.log(y);
+    const formData = localStorage.getItem('formData');
+    const newFormData = JSON.parse(formData);
     return (
             <div id="results">
                 <div className="row resultRow">
@@ -13,7 +12,7 @@ function Users() {
                     <div>BMI</div>
                 </div>
                 {
-                    y.map((item, index) => (
+                    newFormData.map((item, index) => (
                         <div key={index} className="resultRow">
                             <div>{item.username}</div>
                             <div>{item.weight}</div>

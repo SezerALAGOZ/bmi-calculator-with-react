@@ -21,7 +21,7 @@ function About() {
         </p>
       </div>
       <div id="bmi-image">
-        <img src={BMIRange} />
+        <img src={BMIRange} alt="an-image-showing-bmi-intervals" />
       </div>
     </div>
   );
