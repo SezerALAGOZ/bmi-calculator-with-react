@@ -6,7 +6,7 @@ function Users() {
     console.log(y);
     return (
             <div id="results">
-                <div className="row">
+                <div className="row resultRow">
                     <div>NAME</div>
                     <div>WEIGHT</div>
                     <div>HEIGHT</div>
@@ -14,7 +14,7 @@ function Users() {
                 </div>
                 {
                     y.map((item, index) => (
-                        <div key={index} className="row">
+                        <div key={index} className="resultRow">
                             <div>{item.username}</div>
                             <div>{item.weight}</div>
                             <div>{item.height}</div>
